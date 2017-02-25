@@ -24,14 +24,15 @@ config = {
     rules: [
       { test: /\.coffee(\.erb)?$/, loader: "coffee-loader" },
       {
-        test: /\.js(\.erb)?$/,
+        test: /\.jsx?(\.erb)?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
           presets: [
             'react',
             [ 'latest', { 'es2015': { 'modules': false } } ]
-          ]
+          ],
+          plugins: ["transform-es2015-destructuring", "transform-object-rest-spread"]
         }
       },
       {
@@ -51,7 +52,7 @@ config = {
   ],
 
   resolve: {
-    extensions: [ '.js', '.coffee' ],
+    extensions: [ '.jsx', '.js', '.coffee' ],
     modules: [
       path.resolve('app/javascript'),
       path.resolve('node_modules')

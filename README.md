@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to run this on your machine:
 
-Things you may want to cover:
+1. Clone this repository
 
-* Ruby version
+2. run `bundle` to install ruby dependencies
 
-* System dependencies
+3. run `yarn` to install js dependencies
 
-* Configuration
+4. setup a postgres database server and run `rails db:create`
 
-* Database creation
+5. run the server: `./bin/webpack-dev-server` (the js asset server) and `rails s` (the html server)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+6. optionally you can deploy this to heroku (first install node js as a buildpack: `heroku buildpacks:add --index 1 heroku/nodej`)
